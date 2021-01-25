@@ -35,4 +35,4 @@ composer create-project symfony/website-skeleton [nom du projet]
 
 Si l'instllation c'est bien passé, se rendre sur :
 
-http://localhost/formation-Symfony/demo-symfony/public/
+http://localhost/NOM_REPO/NOM_PROJET/public/
