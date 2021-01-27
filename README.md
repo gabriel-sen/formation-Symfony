@@ -32,6 +32,45 @@ composer create-project symfony/website-skeleton [nom du projet]
 
 (On ajoute /.idea/ au .gitignore pour éviter les conflits avec les collègues qui bossent sur PHP storm)
 
+###Apache-pack
+On install apache-pack pour rediriger les URL vers index.html via l'écriture d'URL.
+
+```shell
+composer req apache-pack 
+```
+
+### Structures des reprtoires
+
+- #####Bin : 
+  Le fichier Console permet d'executer des commandes qui génère du code Symfony pour nous. 
+  
+- #####Config > Package : 
+  Fichiers.yml sont des fichier contenant des clés, attention, très stricte à l'indentation. Très souvent automatisé.
+  
+- #####Public : 
+  Contrôleur frontal. Index.php / C'est aussi dans ce repo qu'on va placer les fichiers accessible par le navigateur (img, css, toute les assets en somme). Accessible via une URL.
+
+- #####Vendor : 
+  On retrouve tout ce que Composer install. L'équivalent des nodes modules. On ne touche à rien. 
+  
+- #####src : 
+  C'est là ou on place nos codes PHP, les objets, les classes etc...
+  
+- #####template : 
+  Nos fichiers de vues, Twig...
+  
+- #####migrations :
+  Scripte de mis eà jour de bases de données 
+  
+- #####translations : 
+  Fichiers de traductions, on y trouve les dictionnaires. 
+  
+- #####tests : 
+  Les teste unitaires et fonctionnels. 
+  
+- #####var : 
+  Caches et logs d'erreurs.
+
 
 Si l'instllation c'est bien passé, se rendre sur :
 
