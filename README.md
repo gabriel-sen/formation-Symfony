@@ -75,3 +75,47 @@ composer req apache-pack
 Si l'instllation c'est bien passé, se rendre sur :
 
 http://localhost/NOM_REPO/NOM_PROJET/public/
+
+--------------
+
+Pour créer une page en Symphony on as besoin d'une route, d'un crontrôleur et d'un fichier twig.
+### Le system de routage 
+ Une URL => Une fonction
+
+http://localhost/NOM_REPO/NOM_PROJET/public/contact/   => contactUs()
+http://localhost/NOM_REPO/NOM_PROJET/public/           => home()
+
+
+# Notes utiles :
+
+###La page ne s'affiche pas malgré le routage ?
+Il s'agit peut-être d'un problème de cache. Testons avant, si les routes sont bien activés. 
+
+Utilisez la commandeci dessous pour afficher la lister des routes.
+```shell
+php bin/console debug:router
+```
+On obtiens donc : 
+```shell
+ -------------------------- -------- -------- ------ -----------------------------------
+Name                       Method   Scheme   Host   Path
+ -------------------------- -------- -------- ------ -----------------------------------
+_preview_error             ANY      ANY      ANY    /_error/{code}.{_format}
+_wdt                       ANY      ANY      ANY    /_wdt/{token}
+_profiler_home             ANY      ANY      ANY    /_profiler/
+_profiler_search           ANY      ANY      ANY    /_profiler/search
+_profiler_search_bar       ANY      ANY      ANY    /_profiler/search_bar
+_profiler_phpinfo          ANY      ANY      ANY    /_profiler/phpinfo
+_profiler_search_results   ANY      ANY      ANY    /_profiler/{token}/search/results
+_profiler_open_file        ANY      ANY      ANY    /_profiler/open
+_profiler                  ANY      ANY      ANY    /()_profiler/{token}
+_profiler_router           ANY      ANY      ANY    /_profiler/{token}/router
+_profiler_exception        ANY      ANY      ANY    /_profiler/{token}/exception
+_profiler_exception_css    ANY      ANY      ANY    /_profiler/{token}/exception.css
+app_main_home              ANY      ANY      ANY    /
+ -------------------------- -------- -------- ------ -----------------------------------
+```
+
+Si la dernière route il affiche pourtant bien dans la liste, il s'agit d'un problème de cache. 
+Pour supprimer le cache. Ca ce passe dans le repertoire Var > cache > on supprime [dev].
+Et on rafraichis la page. 
