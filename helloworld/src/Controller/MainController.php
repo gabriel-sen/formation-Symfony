@@ -8,9 +8,9 @@
     class MainController extends  AbstractController
     {
         /**
-         * @Route("/test")
+         * @Route("/")
          */
         public function home(){
-            die("hello world");
+            return $this->render('main/home.html.twig'); // On nome le fichier twig comme la fonction
         }
     }

@@ -76,6 +76,8 @@ Si l'instllation c'est bien passé, se rendre sur :
 
 http://localhost/NOM_REPO/NOM_PROJET/public/
 
+
+
 --------------
 
 Pour créer une page en Symphony on as besoin d'une route, d'un crontrôleur et d'un fichier twig.
@@ -84,6 +86,7 @@ Pour créer une page en Symphony on as besoin d'une route, d'un crontrôleur et 
 
 http://localhost/NOM_REPO/NOM_PROJET/public/contact/   => contactUs()
 http://localhost/NOM_REPO/NOM_PROJET/public/           => home()
+
 
 
 # Notes utiles :
@@ -119,3 +122,20 @@ app_main_home              ANY      ANY      ANY    /
 Si la dernière route il affiche pourtant bien dans la liste, il s'agit d'un problème de cache. 
 Pour supprimer le cache. Ca ce passe dans le repertoire Var > cache > on supprime [dev].
 Et on rafraichis la page. 
+
+
+### le comportement de symfony
+On créer le contrôler qui comporte une fonction ayant en return le lien vers du template twig.
+```shell
+    voir : src > Controller > MaintController.php
+````
+#### Quand on écris l'url de notre projet, comment se comporte Symfony ? : 
+- C'est d'abord l'index qui est chargé,
+- Puis le Kernel
+- Ensuite Symfony analyse toute les routes du projet jus'quà trouver celui qui correspond
+- une fois la route trouvé, il pplique la fonction ocntenue dans le controller pour return le fichier twig qui se trouve dans le repo Template :
+    ```shell
+    voir : template > main > home.html.twig
+    ````
+  On accède jamais au template par un lien direct. Mais toujours via le Controler. 
+
