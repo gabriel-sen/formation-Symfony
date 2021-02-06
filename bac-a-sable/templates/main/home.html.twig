@@ -1,0 +1,73 @@
+<h1>Je teste ici quelque éléments de base que Twig met à disposition</h1>
+
+<a href="https://twig.symfony.com/doc/"> La documentation Twig</a>
+
+<p> Pour voir les éléments téstés de Twig, rendez-vous dans le fichier bac-a-sable > template > main > home.html.twig</p>
+
+<p> les  :</p>
+{# Ceci est commentaire #}
+
+
+
+
+<p> Les Echos : </p>
+
+{{ "ceci est un echo, il permet d'afficher une variable " }}
+
+
+
+
+<h3> acolade pourcentage permet d''écrire des instructions, des variables, des tables.. </h3>
+
+<h3> Créer des variables :</h3>
+{%  set product =" computer" %}
+
+<h3>Créer une variable contenant un tablaux :</h3>
+{% set colors = ["brown", "pink", "yellow"] %}
+
+<h3> Créer une variable contenant un Objet : </h3>
+{% set movie = {
+    "title" : "forest gump",
+    "year" : "1990"
+} %}
+
+<h3>Afficher la variable :</h3>
+{{ product }}
+
+<h3> Les boucles : En Twig nous avons que le For : dans un tableau</h3>
+{% for c in colors %}
+    <div>{{ c }}</div>
+{% endfor %}
+
+<h3> Les boucles : compter les index avec la variable loop.index</h3>
+{% for c in colors %}
+    <div>{{ loop.index }}{{ c }}</div>
+{% endfor %}
+<h3> Les boucles : compter la dernière index loop.last / .first</h3>
+{% for c in colors %}
+    <div>{{ loop.last }}{{ c }}</div>
+{% endfor %}
+
+<h3> Les boucles : dans un objet</h3>
+{% for key, val in movie %}
+    <div>{{ key }} : {{ val }}</div>
+{% endfor %}
+
+
+<h3> Les conditions : les filtres </h3>
+{% if colors | length > 3 %}
+    <p>Affiche moi cette div si la longueur du tableau colors comporte plus de 3 elements</p>
+{% elseif colors | length < 0 %}
+    <p> plus petit que 0 </p>
+{% else %}
+    <p>au moins 3</p>
+
+{% endif %}
+
+
+<h3> Afficher la date</h3>
+<p>Aujourd'hui</p>
+<p>{{ "now" | date("d/m/y") }}</p>
+<p>Dans deux semaines</p>
+<p>{{ "+2weeks" | date("d/m/y") }}</p>
+
