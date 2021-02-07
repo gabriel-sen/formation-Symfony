@@ -3,7 +3,8 @@
 {% extends 'base.html.twig' %}
 
 {%  block title %}
-    contact !
+    {# Grace à la fonction "parent" on re affiche le titre de base sur le template base.html.twig #}
+    {{ parent() }} contact !
 {% endblock %}
 
 {% block body  %}
