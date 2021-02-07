@@ -87,9 +87,17 @@ Pour créer une page en Symphony on as besoin d'une route, d'un crontrôleur et 
 http://localhost/NOM_REPO/NOM_PROJET/public/contact/   => contactUs()
 http://localhost/NOM_REPO/NOM_PROJET/public/           => home()
 
-
+----------------------------
+----------------------------
+----------------------------
 
 # Notes utiles :
+
+### sécurité :
+- Twig prends en charge nativement HTMLentities pour la sécurité sur les variables. 
+```shell
+htmlentities ($x); natif dans {{ $x }}
+```
 
 ###La page ne s'affiche pas malgré le routage ?
 Il s'agit peut-être d'un problème de cache. Testons avant, si les routes sont bien activés. 
