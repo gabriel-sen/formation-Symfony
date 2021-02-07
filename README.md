@@ -134,8 +134,25 @@ On créer le contrôler qui comporte une fonction ayant en return le lien vers d
 - Puis le Kernel
 - Ensuite Symfony analyse toute les routes du projet jus'quà trouver celui qui correspond
 - une fois la route trouvé, il pplique la fonction ocntenue dans le controller pour return le fichier twig qui se trouve dans le repo Template :
-    ```shell
-    voir : template > main > home.html.twig
-    ````
+```shell
+  voir : template > main > home.html.twig
+ ````
   On accède jamais au template par un lien direct. Mais toujours via le Controler. 
 
+#### Créer une autre page :
+- On créer un controller avec sa route.
+```shell
+  voir : template > main >ConactController.php
+ ````
+- On créer un template twig qui fait un extends de la base.html.twig comportant des balises comme dans l'exemple
+```shell
+  voir : src > Controller > contact.html.twig
+ ````
+
+#### Le CSS : 
+Pour éviter tout bug, on utilise pas le link hreff avec l'URL nativement. 
+On lie le CSS en asset dans le fichier base.html.twig
+
+```shell
+     <link rel="stylesheet" href="{{  asset('css/style.css') }}">
+ ````
