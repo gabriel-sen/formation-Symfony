@@ -156,3 +156,15 @@ On lie le CSS en asset dans le fichier base.html.twig
 ```shell
      <link rel="stylesheet" href="{{  asset('css/style.css') }}">
  ````
+
+### Les variables dans le template Twig ? 
+ On les déclare dans un tableau dans le controler : 
+```shell
+public function home(){
+    $username = "gabriel" ;
+    return $this->render('main/home.html.twig', [ 
+        "username" => $username,
+        "hello" => "bonjour"
+    ]);
+}
+ ````
