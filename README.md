@@ -176,3 +176,17 @@ public function home(){
     ]);
 }
  ````
+
+
+## On peut utilliser symfony en ligne de command epour créer des fichiers.
+Dans le terminal
+```shell
+  symfony console
+ ````
+- on peut créer par exemple des controleurs : 
+```shell
+symfony console make:controller
+ ```
+Sa route et son nom sera déjà créé, ainsi que son repo et son fichier xxx.html.twig
+la page sera disponnible sur emple :
+http://localhost/formation-SYMFONY/bac-a-sable/public/test
